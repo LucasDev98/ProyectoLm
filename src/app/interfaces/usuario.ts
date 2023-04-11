@@ -5,4 +5,7 @@ export interface Usuario {
     password: string;
     nombre: string;
     mail: string;
+    token : string;
+    legajo : string;
 }
+

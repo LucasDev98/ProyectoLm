@@ -4,13 +4,20 @@ import { HeaderComponent } from './header/header.component';
 
 
 
+//MaterialModules
+import { MaterialModule } from '../material/material.module';
+
 @NgModule({
   declarations: [
     HeaderComponent,
 
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
+  ],
+  exports: [
+    HeaderComponent
   ]
 })
 export class ComponentsModule { }

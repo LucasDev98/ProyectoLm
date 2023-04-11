@@ -1,1 +1,42 @@
-<p>home works!</p>
+<app-header [drawer]="drawer"></app-header>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-list role="navigation" >
+      <mat-nav-list>
+        <mat-list-item class="mat-item" (click)="navegar('home/usuarios')">
+          <mat-icon class="mat-icon">supervisor_account</mat-icon>
+          Obtener Usuarios
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>how_to_reg</mat-icon>
+          Registrar Usuario
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>restore</mat-icon>
+          Cambiar Contraseña
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>lock_open</mat-icon>
+          Forzar Contraseña
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>warning</mat-icon>
+          Dar de Baja Usuario
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>work</mat-icon>
+          Eventos
+        </mat-list-item>
+
+     </mat-nav-list>
+
+    </mat-list>
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <h1>Aqui estara el contenido</h1>
+  </div>
+
+</mat-drawer-container>

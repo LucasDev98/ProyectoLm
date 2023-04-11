@@ -4,10 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 //Pages Module
 import { HomeComponent } from './pages/home/home.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'home', component:HomeComponent
+    path: 'home', component: HomeComponent, canActivate: [AuthGuard]
   }
 ];
 

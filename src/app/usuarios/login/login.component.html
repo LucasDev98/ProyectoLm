@@ -1,6 +1,54 @@
+<div class="container-form">
+  <mat-card class="form-login">
+    <div class="img-login">
+      <img src="assets/img/profile-user.png" alt="imagen usuario" style="height: 100px; width: 100px" />
+    </div>
 
+    <h1 class="text-center">Iniciar Sesión</h1>
+    <mat-card-content>
 
-<div class="form">
-<mat-card></mat-card>
+      <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="error" *ngIf="error">
+            <p>Las credenciales no son validas</p>
+        </div>
+        <mat-form-field appearance="fill" color="warn" class="form_field">
+          <mat-label>Usuario</mat-label>
+          <input matInput
+                 required
+                 name="usuario"
+                 [(ngModel)]="usuarioLogin.usuario"
+                 #usuario="ngModel"
+                 >
+          <button mat-icon-button matSuffix type="button" (click)="usuarioLogin.usuario=''">
+            <mat-icon >clear</mat-icon>
+          </button>
+          <mat-error *ngIf="usuario.invalid">El campo es requerido</mat-error>
+        </mat-form-field>
 
+        <section class="form_field  form_field--check">
+          <mat-checkbox  type="checkbox" [(ngModel)]="recordar" name="recordar"></mat-checkbox><span>Recordarme</span>
+        </section>
+        <mat-form-field appearance="fill" color="warn" class="form_field">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'"
+                 name="password"
+                 required
+                 minlength="3"
+                 [(ngModel)]="usuarioLogin.password"
+                 #password="ngModel"
+                 >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <!-- <mat-error *ngIf="password.invalid">El campo es requerido</mat-error> -->
+        </mat-form-field>
+
+        <div class="form_field form_field--submit">
+          <button  mat-raised-button color="primary" [disabled]="form.status == 'INVALID'" mat-button color="warn"> Ingresar</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>

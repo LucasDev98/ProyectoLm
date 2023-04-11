@@ -1,4 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *::after,*::before{
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px;
+  color: #ffffff;
+  height: 100vh;
+
+}
+
+
+/**--GLOBAL STYLES--**/
+.error {
+  background-color: red;
+  border-radius: 1rem;
+}
+
+.error p {
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  border: nonoe;
+}
