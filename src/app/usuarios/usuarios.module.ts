@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { UsuarioRoutingModule } from './usuarios.routing.module';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
+import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MaterialModule } from '../material/material.module';
     CommonModule,
     UsuarioRoutingModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    ComponentsModule
   ],
   providers:[MaterialModule]
 })

@@ -9,12 +9,12 @@
 }
 
 .example-sidenav-content {
-  display: flex;
+
   height: 100%;
   width: 100%;
-
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .example-sidenav {
@@ -25,12 +25,20 @@
   padding: 0;
 }
 .mat-item{
-  height: 15rem;
+  /* height: 15rem; */
 }
 .mat-icon {
+  vertical-align: middle;
 
-  padding-top: .2rem;
-  height: auto;
+}
+a {
+  color: #ffffff;
+  vertical-align: middle;
+  text-decoration: none;
 }
 
-
+.icon-size {
+  font-size: 28px;
+  height: 28px;
+  width: 28px;
+}

@@ -1,1 +1,38 @@
-<p>obtener-usuarios works!</p>
+<div class="main-container">
+
+<div class="header">
+
+    <div class="search-employed">
+        <mat-form-field class="example-full-width">
+          <mat-label>Legajo</mat-label>
+          <input type="email" matInput
+                placeholder="Legajo" #legajo (keyup.enter)="buscarEmpleado(legajo.value)" >
+
+        </mat-form-field>
+        <div class="form_field form_field--submit">
+          <button  mat-raised-button color="primary"  mat-button color="warn" (click)="buscarEmpleado(legajo.value)"> Ingresar</button>
+        </div>
+    </div><!--.search-employed-->
+    <div class="all-employes">
+      <button mat-fab extended color="warn" (click)="mostrarEmpleados()">
+        <mat-icon>supervisor_account</mat-icon>
+        Obtener Empleados
+      </button>
+    </div>
+</div><!--.header-->
+    <div class="error-employes" *ngIf="error">
+      <h3>No se encontro el legajo solicitado</h3>
+    </div>
+
+     <div class="container-employes animate__animated animate__fadeInLeft" *ngIf="!error" >
+        <div class="card animate__animated animate__fadeInLeft" *ngFor="let empleado of employes">
+          <img src="assets/img/no-image.jpg" alt="imagen empleado">
+          <h3>{{ empleado.nombre }}</h3>
+          <p>Legajo: {{ empleado.legajo }}</p>
+          <p>Sector: {{ empleado.rol }}</p>
+        </div>
+     </div><!--.container-employes-->
+
+
+</div>
+

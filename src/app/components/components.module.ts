@@ -6,10 +6,14 @@ import { HeaderComponent } from './header/header.component';
 
 //MaterialModules
 import { MaterialModule } from '../material/material.module';
+import { OverlayComponent } from './overlay/overlay.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
+    OverlayComponent,
+    SpinnerComponent,
 
   ],
   imports: [
@@ -17,7 +21,9 @@ import { MaterialModule } from '../material/material.module';
     MaterialModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    OverlayComponent,
+    SpinnerComponent
   ]
 })
 export class ComponentsModule { }

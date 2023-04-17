@@ -17,7 +17,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Overlay, OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [],
@@ -36,9 +37,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule,
+    OverlayModule
 
   ]
 
 })
+
+
 export class MaterialModule { }

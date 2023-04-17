@@ -1,26 +1,52 @@
-
-<div class="container-form">
+<div class="main-container">
+  <div *ngIf="registroExitoso" class="registrado-success success animate__animated animate__fadeInLeft">
+    <h3>Usuario Registrado Correctamente</h3>
+  </div>
+<div class="container-form animate__animated animate__fadeInLeft">
   <mat-card class="form-login">
-    <div class="img-login">
-      <img src="assets/img/profile-user.png" alt="imagen usuario" style="height: 100px; width: 100px" />
-    </div>
 
-    <h1 class="text-center">Registrar</h1>
+    <h1 class="text-center">Registrar Usuario</h1>
     <mat-card-content>
 
       <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div class="error" *ngIf="error">
-            <p>Las credenciales no son validas</p>
+            <p>El usuario ya existe!</p>
         </div>
-        <div class="error">
-          <p>Error al intentar Conectar intente nuevamente mas tarde</p>
-        </div>
+
         <mat-form-field appearance="fill" color="warn" class="form_field">
           <mat-label>Usuario</mat-label>
           <input matInput
                  required
                  name="usuario"
                  [(ngModel)]="usuarioRegister.usuario"
+                 #usuario="ngModel"
+                 >
+          <button mat-icon-button matSuffix type="button" (click)="usuarioRegister.usuario=''">
+            <mat-icon >clear</mat-icon>
+          </button>
+          <mat-error *ngIf="usuario.invalid">El campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" color="warn" class="form_field">
+          <mat-label>Nombre</mat-label>
+          <input matInput
+                 required
+                 name="nombre"
+                 [(ngModel)]="usuarioRegister.nombre"
+                 #usuario="ngModel"
+                 >
+          <button mat-icon-button matSuffix type="button" (click)="usuarioRegister.usuario=''">
+            <mat-icon >clear</mat-icon>
+          </button>
+          <mat-error *ngIf="usuario.invalid">El campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" color="warn" class="form_field">
+          <mat-label>Email</mat-label>
+          <input matInput
+                 required
+                 name="mail"
+                 [(ngModel)]="usuarioRegister.mail"
                  #usuario="ngModel"
                  >
           <button mat-icon-button matSuffix type="button" (click)="usuarioRegister.usuario=''">
@@ -55,4 +81,4 @@
   </mat-card>
 </div>
 
-
+</div>

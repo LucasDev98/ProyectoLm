@@ -1,3 +1,5 @@
+
+<app-overlay  *ngIf="loading" > </app-overlay>
 <div class="container-form">
   <mat-card class="form-login">
     <div class="img-login">
@@ -10,6 +12,9 @@
       <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div class="error" *ngIf="error">
             <p>Las credenciales no son validas</p>
+        </div>
+        <div class="error" *ngIf="errorRed">
+          <p>Error al intentar Conectar intente nuevamente mas tarde</p>
         </div>
         <mat-form-field appearance="fill" color="warn" class="form_field">
           <mat-label>Usuario</mat-label>
@@ -52,3 +57,5 @@
     </mat-card-content>
   </mat-card>
 </div>
+
+

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from '../interfaces/usuario';
 
@@ -10,14 +10,26 @@ export class UsuarioService {
   legajo : string;
   urlBase : string = 'http://89.117.32.214:5025'
   constructor( private http : HttpClient ) {
-
+    this.readToken()
    }
 
 
 
   login( data : Usuario ){
     const authData = { ...data}
-    return this.http.post(`${this.urlBase}/api/Login/Loguear`, authData )
+    const url = `${this.urlBase}/api/Login/Loguear`;
+    return this.http.post( url, authData )
+  }
+
+  register( data : Usuario ){
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`
+    })
+
+    console.log(headers)
+    const url = `${this.urlBase}/api/Login/RegistrarUsuario`
+    return this.http.post( url, data, {headers} )
   }
 
   saveToken( dataUsuario : Usuario ) {
